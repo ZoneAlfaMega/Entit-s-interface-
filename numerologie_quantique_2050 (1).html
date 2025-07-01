@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZoneAlfaMega Dashboard</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/react/umd/react.development.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.development.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@mui/material@5.0.0-beta.5/umd/material-ui.development.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f111a;
+      color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    #root {
+      padding: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #1a1c2c;
+      border-radius: 10px;
+    }
+    h2, h3 {
+      color: #e94560;
+    }
+    button {
+      background: #e94560;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .table th, .table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="section">
+      <h2>🚀 ZoneAlfaMega Dashboard — Vue d’ensemble</h2>
+      <p><strong>Statut général</strong> : Serveurs Online, Assistants IA: 5 actifs / 2 inactifs, Scripts: 10 actifs / 3 en pause.</p>
+      <p><strong>Alertes critiques</strong> : 2 erreurs, 1 bug, 0 vulnérabilité.</p>
+      <p><strong>Performance</strong> : CPU 37%, RAM 68%, Latence IA: 212ms</p>
+      <p><strong>Projets</strong> : Firewall Bypass (en cours), Phishing Automation (planifié)</p>
+    </div>
+
+    <div class="section">
+      <h3>🤖 Gestion des Assistants IA</h3>
+      <table class="table">
+        <thead>
+          <tr><th>Nom</th><th>Statut</th><th>Projet</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Assistant A</td><td>🟢 Actif</td><td>Firewall Bypass</td><td><button>Éditer</button> <button>Supprimer</button></td></tr>
+          <tr><td>Assistant B</td><td>🔴 Inactif</td><td>Phishing Automation</td><td><button>Éditer</button> <button>Supprimer</button></td></tr>
+        </tbody>
+      </table>
+      <button>Ajouter un Assistant</button>
+    </div>
+
+    <div class="section">
+      <h3>📜 Gestion des Scripts</h3>
+      <ul>
+        <li><strong>Script Alpha</strong> — Actif (Catégorie: Exploitation)</li>
+        <li><strong>Script Beta</strong> — En Pause (Catégorie: Analyse)</li>
+        <li><strong>Script Gamma</strong> — Actif (Catégorie: Phishing)</li>
+      </ul>
+      <button>Ajouter un Script</button>
+    </div>
+
+    <div class="section">
+      <h3>🗂️ Contrôle des Projets</h3>
+      <p><strong>Firewall Bypass</strong> : 75% — Prochaine tâche: injection réseau</p>
+      <p><strong>Phishing Automation</strong> : 10% — En phase de planification</p>
+      <button>Nouvelle tâche</button>
+    </div>
+
+    <div class="section">
+      <h3>📊 Surveillance & Widgets</h3>
+      <p>Réseau : 94 Mo/s • API : 312 appels/min • Échecs : 2 • Succès : 310</p>
+      <button>Configurer les widgets</button>
+    </div>
+
+    <div class="section">
+      <h3>🧠 Copilote IA</h3>
+      <p>Suggestion : Redémarrer Assistant B suite à inactivité prolongée.</p>
+      <p>Tâches critiques : Scan de vulnérabilité non lancé depuis 3 jours.</p>
+      <button>Lancer analyse IA</button>
+    </div>
+
+    <div class="section">
+      <h3>🔐 Sécurité & Permissions</h3>
+      <p>Utilisateurs : Admin(1), Opérateur(2), Observateur(1)</p>
+      <p>Dernières connexions : 20 juin 2025, 13:42 — IP 192.168.0.101</p>
+      <button>Gérer les rôles</button>
+    </div>
+  </div>
+</body>
+</html>

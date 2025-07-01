@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Quanta - Numérologie Quantique & Réalité Augmentée</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0f1a;
+      color: #f4f4f4;
+      padding: 20px;
+    }
+    h2, h3 {
+      color: #e94560;
+    }
+    input, button, select {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    input, select {
+      width: 100%;
+      background: #1a1c2c;
+      color: #f4f4f4;
+    }
+    button {
+      background: #e94560;
+      color: white;
+      cursor: pointer;
+    }
+    .panel {
+      background: #16182b;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .output {
+      margin-top: 15px;
+      background: #11131f;
+      padding: 10px;
+      border-left: 4px solid #f9ed69;
+      font-size: 1rem;
+    }
+    .map, .profile, .codex {
+      margin-top: 30px;
+      background: #10131d;
+      padding: 15px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🧠 AR Quanta - Interface Numérologique Quantique</h2>
+
+  <div class="panel">
+    <h3>🔢 Entrée symbolique</h3>
+    <input id="inputText" placeholder="Entrez un mot, un lieu, un code vibratoire">
+    <button onclick="calculateQuantum()">Analyser en réalité augmentée</button>
+  </div>
+
+  <div class="panel">
+    <h3>🎛️ Panneau de Contrôle</h3>
+    <label>Mode de Réalité :</label>
+    <select id="modeSelector">
+      <option value="symbolique">Symbolique</option>
+      <option value="numérologique">Numérologique</option>
+      <option value="quantique">Quantique</option>
+      <option value="furtif">Furtif</option>
+    </select>
+    <label>Affichage :</label>
+    <select id="displayMode">
+      <option value="normal">Normal</option>
+      <option value="couches">Couches énergétiques</option>
+      <option value="portails">Portails actifs</option>
+      <option value="invisible">Invisible / Crypté</option>
+    </select>
+  </div>
+
+  <div class="panel output" id="result"></div>
+
+  <div class="map">
+    <h3>🗺️ Carte Énergétique</h3>
+    <p>(à intégrer via WebXR ou API Map customisée : zones à haute vibration, lignes de ley, points de portails...)</p>
+  </div>
+
+  <div class="profile">
+    <h3>👤 Profil Mystique Utilisateur</h3>
+    <ul>
+      <li>Nom ésotérique : <strong>non défini</strong></li>
+      <li>Chiffre maître : <strong>---</strong></li>
+      <li>Niveau d'ouverture de conscience : <strong>variable</strong></li>
+    </ul>
+  </div>
+
+  <div class="codex">
+    <h3>📚 Base des Lieux Codés</h3>
+    <p>Lieux enregistrés avec niveaux vibratoires (à relier à une base JSON ou serveur distant)</p>
+    <ul>
+      <li>Mont Bugarach → fréquence 7.13 → portail actif</li>
+      <li>Stonehenge → fréquence 9.99 → nexus tellurique</li>
+      <li>Pyramide de Gizeh → fréquence 11.11 → lien stellaire</li>
+    </ul>
+  </div>
+
+  <script>
+    const symbols = {
+      1: { meaning: "Leadership individuel", states: ["Spin up", "Spin down"] },
+      2: { meaning: "Dualité onde/corpuscule", states: ["Superposition", "Intrication"] },
+      3: { meaning: "Résonance vibratoire", states: ["Résonance A", "Résonance B"] },
+      4: { meaning: "Stabilité énergétique", states: ["Noeud stable", "Phase cohérente"] },
+      5: { meaning: "Fluctuation multidimensionnelle", states: ["Changement brutal", "Mutation"] },
+      6: { meaning: "Équilibre occulte", states: ["Harmonie alpha", "Harmonie oméga"] },
+      7: { meaning: "Conscience observatrice", states: ["Effondrement", "Clarification"] },
+      8: { meaning: "Pouvoir astral", states: ["Amplitude haute", "Fréquence basse"] },
+      9: { meaning: "Fusion universelle", states: ["Intégration", "Transcendance"] }
+    };
+
+    function textToNumber(text) {
+      const alpha = 'abcdefghijklmnopqrstuvwxyz';
+      text = text.toLowerCase().replace(/[^a-z]/g, '');
+      let total = 0;
+      for (let c of text) {
+        total += alpha.indexOf(c) + 1;
+      }
+      return total;
+    }
+
+    function reduceToSingleDigit(n) {
+      while (n > 9) {
+        n = n.toString().split('').reduce((a, b) => a + parseInt(b), 0);
+      }
+      return n;
+    }
+
+    function calculateQuantum() {
+      const input = document.getElementById('inputText').value.trim();
+      const mode = document.getElementById('modeSelector').value;
+      const display = document.getElementById('displayMode').value;
+
+      if (!input) {
+        document.getElementById('result').innerHTML = "⛔ Entrez une donnée valide.";
+        return;
+      }
+
+      const total = textToNumber(input);
+      const reduced = reduceToSingleDigit(total);
+      const symbol = symbols[reduced];
+
+      let output = `<strong>🧬 Analyse de :</strong> ${input}<br>`;
+      output += `<strong>Valeur brute :</strong> ${total}<br>`;
+      output += `<strong>Réduction :</strong> ${reduced}<br>`;
+      output += `<strong>Signification :</strong> ${symbol.meaning}<br>`;
+      output += `<strong>États quantiques :</strong> ${symbol.states.join(", ")}<br>`;
+      output += `<strong>Mode :</strong> ${mode} | <strong>Affichage :</strong> ${display}`;
+
+      document.getElementById('result').innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
